@@ -1,0 +1,30 @@
+<!-- #1. Navigation Drawer -->
+<!-- DrawerLayout : 최상위 View 위치 -->
+<!-- Android Standard Platform이 아닌 Support library에 포함 -->
+<android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- FrameLayout : Main Content(not Flagment) -->
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Navigation Drawer : ListView -->
+        <!--  layout_gravity : View 자체의 위치(Drawer(list)의 위치)
+              layout_gravity속성을 start로 설정해야 RTL 지원
+              gravity : View내 content의 위치
+              divider : ListView devide Line (0dp 시 구분선 감춤) -->
+        <ListView
+            android:id="@+id/left_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:background="#ffff"/>
+</android.support.v4.widget.DrawerLayout>
